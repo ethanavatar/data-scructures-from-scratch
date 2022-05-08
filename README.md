@@ -2,5 +2,6 @@
 Data structures from scratch
 
 ## Contents
- - [ArrayList](/ArrayList/) **BROKEN**
- - [Stack (Fixed Size)](/Stack/)
+ - [Stack (Static Capacity)](src/StaticStack.h)
+ - [Stack (Dynamic Capacity)](src/DynamicStack.h)
+ 
