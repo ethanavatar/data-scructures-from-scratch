@@ -22,10 +22,13 @@ class ArrayList {
             return items[index];
         }
 
-        ArrayList() {
-            size = 0;
-            capacity = 1;
-
+        ArrayList(int initValues) {
+            size = initValues.length;
+            capacity = initValues.length;
+            items = NULL;
+            for (int i = 0; i < initValues.length; i++) {
+                append(initValues[i]);
+            }
         }
 
         ~ArrayList() {
@@ -85,7 +88,6 @@ class ArrayList {
 };
 
 int main() {
-    ArrayList list;
-    list.append(1);
+    ArrayList list = {1, 2, 3, 4, 5};
     std::cout << list[0] << std::endl;
 }

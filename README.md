@@ -3,3 +3,4 @@ Data structures from scratch
 
 ## Contents
  - [ArrayList](/ArrayList/) **BROKEN**
+ - [Stack (Fixed Size)](/Stack/)
