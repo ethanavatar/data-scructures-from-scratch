@@ -2,6 +2,6 @@
 Data structures from scratch
 
 ## Contents
- - [Stack (Static Capacity)](src/StaticStack.h)
- - [Stack (Dynamic Capacity)](src/DynamicStack.h)
- 
+ - [Stack (Static capacity)](src/StaticStack.h)
+ - [Stack (Dynamic capacity)](src/DynamicStack.h)
+ - [Queue (Dynamic-stack based)](src/StaticQueue.h)
