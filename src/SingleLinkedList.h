@@ -5,7 +5,12 @@
 
 struct SingleLinkedNode {
     int data;
-    SingleLinkedNode* next = nullptr;
+    SingleLinkedNode* next;
+
+    SingleLinkedNode(int data) {
+        this->data = data;
+        this->next = nullptr;
+    }
 };
 
 class SingleLinkedList {
@@ -25,13 +30,35 @@ class SingleLinkedList {
             current = head;
         }
 
+        void moveTo(int index) {
+            moveToHead();
+            for (int i = 0; i < index; i++) {
+                current = current->next;
+            }
+        }
+
+        void emptyAdd(SingleLinkedNode* node) {
+            head = node;
+            moveToHead();
+            length = 1;
+        }
+
+        SingleLinkedNode* NewNode(int value) {
+            SingleLinkedNode* newNode = new SingleLinkedNode(value);
+            if (newNode == nullptr) { throw "Out of memory"; }
+
+            newNode->data = value;
+            return newNode;
+        }
+
+
     public:
         SingleLinkedList() {
             head = nullptr;
             moveToHead();
         }
+
         ~SingleLinkedList() {
-            // Idk if this works
             while (head != nullptr) {
                 SingleLinkedNode* temp = head;
                 head = head->next;
@@ -39,91 +66,62 @@ class SingleLinkedList {
             }
         }
 
-        // TODO: Check if this is proper use of references
-        int* operator [] (int index) {
-            if (index < 0 || index >= length) {
-                throw "Index out of bounds";
-            }
-            
-            moveToHead();
-            for (int i = 0; i < index; i++) {
-                current = current->next;
-            }
-
-            return &current->data;
-        }
-
         int get_length() { return length; }
+        bool is_empty() { return (head == nullptr); }
 
         void append(int value) {
-            SingleLinkedNode* newNode = (SingleLinkedNode*)malloc(sizeof(SingleLinkedNode));
-            newNode->data = value;
-
-            if (head == nullptr) {
-                head = newNode;
-                current = head;
-                return;
-            }
+            SingleLinkedNode* newNode = NewNode(value);
+            if (is_empty()) { emptyAdd(newNode); return; }
 
             moveToTail();
-
             current->next = newNode;
-
-            moveToHead();
-
             length++;
         }
 
         void prepend(int value) {
-            SingleLinkedNode* newNode = (SingleLinkedNode*)malloc(sizeof(SingleLinkedNode));
-            newNode->data = value;
+            SingleLinkedNode* newNode = NewNode(value);
+            if (is_empty()) { emptyAdd(newNode); return; }
 
             newNode->next = head;
             head = newNode;
-
-            moveToHead();
-
             length++;
         }
 
         void insert(int value, int index) {
-            SingleLinkedNode* newNode = (SingleLinkedNode*)malloc(sizeof(SingleLinkedNode));
-            newNode->data = value;
+            if (index < 0 || index >= length) { throw "Index out of bounds"; }
 
-            moveToHead();
-            for (int i = 0; i < index - 1; i++) {
-                current = current->next;
-            }
+            SingleLinkedNode* newNode = NewNode(value);
+            if (is_empty()) { emptyAdd(newNode); return; }
 
+            if (index == 0) { prepend(value); return; }
+            if (index == length) { append(value); return; }
+
+            moveTo(index - 1);
             newNode->next = current->next;
             current->next = newNode;
-
-            moveToHead();
-
             length++;
         }
 
-        void remove(int index) {
-            moveToHead();
-            for (int i = 0; i < index - 1; i++) {
-                current = current->next;
-            }
+        int remove(int index) {
+            if (is_empty()) { throw "List is empty"; }
+            if (index < 0 || index >= length) { throw "Index out of bounds"; }
+
+            moveTo(index - 1);
+
+            int value = current->next->data;
 
             current->next = current->next->next;
             free(current->next);
-
-            moveToHead();
-
             length--;
+
+            return value;
         }
 
-        void print() {
-            moveToHead();
-            while (current->next != nullptr) {
-                std::cout << current->next->data << " ";
-                current = current->next;
-            }
-            std::cout << std::endl;
+        int get(int index) {
+            if (is_empty()) { throw "List is empty"; }
+
+            moveTo(index);
+            return current->data;
         }
 };
 

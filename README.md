@@ -2,7 +2,14 @@
 Data structures from scratch
 
 ## Contents
- - [Stack (Static capacity)](src/StaticStack.h)
- - [Stack (Dynamic capacity)](src/DynamicStack.h)
- - [Queue (Dynamic-stack based)](src/StaticQueue.h)
+
+### Arrays
  - [Single linked list](src/SingleLinkedList.h)
+
+### Stacks
+ - [Contiguous static capacity](src/StaticStack.h)
+ - [Contiguous dynamic capacity](src/DynamicStack.h)
+ - [Single Linked](src/LinkedList.h) **BROKEN**
+
+### Queues
+ - [Contiguous dynamic capacity](src/StaticQueue.h)
