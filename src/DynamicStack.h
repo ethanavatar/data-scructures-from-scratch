@@ -32,7 +32,10 @@ class DynamicStack {
         }
 
         int pop() {
-            if (isEmpty()) throw "Stack is empty";
+            if (isEmpty()) {
+                std::cout << "Stack is empty" << std::endl;
+                return 1;
+            }
 
             return stack[top--];
         }

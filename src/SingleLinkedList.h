@@ -45,7 +45,10 @@ class SingleLinkedList {
 
         SingleLinkedNode* NewNode(int value) {
             SingleLinkedNode* newNode = new SingleLinkedNode(value);
-            if (newNode == nullptr) { throw "Out of memory"; }
+            if (newNode == nullptr) { 
+                std::cout << "Memory allocation failed" << std::endl;
+                return nullptr;
+            }
 
             newNode->data = value;
             return newNode;
@@ -88,7 +91,10 @@ class SingleLinkedList {
         }
 
         void insert(int value, int index) {
-            if (index < 0 || index >= length) { throw "Index out of bounds"; }
+            if (index < 0 || index >= length) {
+                std::cout << "Index out of range" << std::endl;
+                return;
+            }
 
             SingleLinkedNode* newNode = NewNode(value);
             if (is_empty()) { emptyAdd(newNode); return; }
@@ -103,8 +109,14 @@ class SingleLinkedList {
         }
 
         int remove(int index) {
-            if (is_empty()) { throw "List is empty"; }
-            if (index < 0 || index >= length) { throw "Index out of bounds"; }
+            if (is_empty()) {
+                std::cout << "List is empty" << std::endl;
+                return 1;
+            }
+            if (index < 0 || index >= length) {
+                std::cout << "Index out of range" << std::endl;
+                return 1;
+            }
 
             moveTo(index - 1);
 
@@ -118,7 +130,10 @@ class SingleLinkedList {
         }
 
         int get(int index) {
-            if (is_empty()) { throw "List is empty"; }
+            if (is_empty()) {
+                std::cout << "List is empty" << std::endl;
+                return 1;
+            }
 
             moveTo(index);
             return current->data;

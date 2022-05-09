@@ -9,6 +9,8 @@
 
 #include "SingleLinkedStack.h"
 
+#include "SingleLinkedQueue.h"
+
 void testStaticStack() {
     StaticStack s = StaticStack(10);
     s.push(1);
@@ -51,12 +53,22 @@ void testSingleLinkedStack() {
     }
 }
 
+void testSingleLinkedQueue() {
+    SingleLinkedQueue s;
+
+    s.enqueue(1);
+    s.enqueue(2);
+    
+    std::cout << s.dequeue() << std::endl;
+}
+
 
 int main () {
     //testStaticStack();
     //testDynamicStack();
 
     //testStackBasedQueue();
-    testSingleLinkedList();
+    //testSingleLinkedList();
     //testSingleLinkedStack();
+    testSingleLinkedQueue();
 }

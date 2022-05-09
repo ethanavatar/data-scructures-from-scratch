@@ -1,10 +1,12 @@
 #ifndef STATICSTACK_H_INCLUDED
 #define STATICSTACK_H_INCLUDED
 
+#include <iostream>
+
 class StaticStack {
     private:
         int* stack;
-        int top = 0;
+        int top = -1;
         int capacity;
 
     public:
@@ -21,7 +23,10 @@ class StaticStack {
         }
 
         int pop() {
-            if (isEmpty()) throw "Stack is empty";
+            if (isEmpty()) {
+                std::cout << "Stack is empty" << std::endl;
+                return 1;
+            }
 
             return stack[top--];
         }

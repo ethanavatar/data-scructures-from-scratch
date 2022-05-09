@@ -21,7 +21,10 @@ class StackBasedQueue {
         }
 
         int dequeue() {
-            if (isEmpty()) throw "Queue is empty";
+            if (isEmpty()) {
+                std::cout << "Queue is empty" << std::endl;
+                return 1;
+            }
 
             return s1.pop();
         }

@@ -9,7 +9,8 @@ Data structures from scratch
 ### Stacks
  - [Contiguous static capacity](src/StaticStack.h)
  - [Contiguous dynamic capacity](src/DynamicStack.h)
- - [Single Linked](src/LinkedList.h) **BROKEN**
+ - [Single Linked](src/LinkedList.h)
 
 ### Queues
  - [Contiguous dynamic capacity](src/StaticQueue.h)
+ - [Single Linked](src/LinkedList.h)
