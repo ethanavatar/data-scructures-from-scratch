@@ -2,7 +2,7 @@
 #define SINGLELINKEDQUEUE_H_INCLUDED
 
 #include <iostream>
-#include "SingleLinkedList.h"
+#include "SingleLinkedList.hpp"
 
 class SingleLinkedQueue {
     private:

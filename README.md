@@ -1,7 +1,7 @@
 # data-scructures-from-scratch
 Data structures from scratch
 
-## Contents
+## Data Structures
 
 ### Arrays
  - [Single linked list](src/SingleLinkedList.h)
@@ -14,3 +14,6 @@ Data structures from scratch
 ### Queues
  - [Contiguous dynamic capacity](src/StaticQueue.h)
  - [Single Linked](src/LinkedList.h)
+
+### Matrices
+ - [N Dimensional Array](src/NDimensionalArray.h) **[WIP]**

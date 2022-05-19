@@ -1,7 +1,7 @@
 #ifndef STACKBASEDQUEUE_H_INCLUDED
 #define STACKBASEDQUEUE_H_INCLUDED
 
-#include "DynamicStack.h"
+#include "DynamicStack.hpp"
 
 class StackBasedQueue {
     private:

@@ -1,15 +1,15 @@
 #include <iostream>
 
-#include "StaticStack.h"
-#include "DynamicStack.h"
+#include "StaticStack.hpp"
+#include "DynamicStack.hpp"
 
-#include "StackBasedQueue.h"
+#include "StackBasedQueue.hpp"
 
-#include "SingleLinkedList.h"
+#include "SingleLinkedList.hpp"
 
-#include "SingleLinkedStack.h"
+#include "SingleLinkedStack.hpp"
 
-#include "SingleLinkedQueue.h"
+#include "SingleLinkedQueue.hpp"
 
 void testStaticStack() {
     StaticStack s = StaticStack(10);
