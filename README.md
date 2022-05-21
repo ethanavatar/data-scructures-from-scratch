@@ -12,7 +12,7 @@ Header only implementations of data structures and algorithms in C++.
 
 - [Contiguous static capacity](src/StaticStack.hpp)
 - [Contiguous dynamic capacity](src/DynamicStack.hpp)
-- [Single Linked](src/LinkedList.hpp)
+- [Single Linked](src/SingleLinkedList.hpp)
 
 ### Queues
 
