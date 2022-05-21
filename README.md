@@ -16,8 +16,8 @@ Header only implementations of data structures and algorithms in C++.
 
 ### Queues
 
-- [Contiguous dynamic capacity](src/StaticQueue.hpp)
-- [Single Linked](src/LinkedList.hpp)
+- [Contiguous dynamic capacity](src/StackBasedQueue.hpp)
+- [Single Linked](src/SingleLinkedQueue.hpp)
 
 ### Matrices
 
