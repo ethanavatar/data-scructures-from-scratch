@@ -6,7 +6,6 @@
 
 #include "../lists/single_link_list.h"
 
-
 typedef struct single_link_stack {
     t_single_link_node* head;
     t_single_link_node* top;
@@ -23,7 +22,6 @@ static t_single_link_stack* create_single_link_stack() {
 }
 
 static void single_link_stack_push(t_single_link_stack* stack, const int value) {
-    printf("single_link_stack_push: %d\n", value);
     if (stack->head == NULL) {
         stack->head = create_single_link_node(value);
         stack->top = stack->head;
@@ -37,8 +35,6 @@ static void single_link_stack_push(t_single_link_stack* stack, const int value) 
 
 static int single_link_stack_pop(t_single_link_stack* stack) {
     int value = stack->top->value;
-
-    printf("single_link_stack_pop: %d\n", value);
 
     single_link_remove(stack->head, single_link_length(stack->head) - 1);
 

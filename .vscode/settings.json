@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "dynamic_stack.h": "c"
+        "dynamic_stack.h": "c",
+        "single_link_stack.h": "c"
     }
 }

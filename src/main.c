@@ -70,19 +70,19 @@ void test_dynamic_stack_queue() {
 
 #include "lists/single_link_list.h"
 void test_single_linked_list() {
-    t_single_link_node* list = create_single_link_node(1);
-    single_link_append(list, 2);
-    single_link_append(list, 3);
-    list = single_link_prepend(list, 0);
-    single_link_remove(list, 2);
-    single_link_insert(list, 2, 2);
+    t_single_link_list* list = create_single_link_list();
+    single_link_list_append(list, 2);
+    single_link_list_append(list, 3);
+    single_link_list_prepend(list, 0);
+    single_link_list_remove(list, 2);
+    single_link_list_insert(list, 2, 2);
 
-    int list_length = single_link_length(list);
+    int list_length = single_link_list_length(list);
     for (int i = 0; i < list_length; i++) {
-        printf("%d\n", single_link_get(list, i));
+        printf("%d\n", single_link_list_get(list, i));
     }
 
-    single_link_free(list);
+    single_link_list_free(list);
 }
 
 #include "stacks/single_link_stack.h"
@@ -107,8 +107,8 @@ int main () {
     //test_dynamic_stack();
     //test_stack_queue();
     //test_dynamic_stack_queue();
-    //test_single_linked_list();
-    test_single_linked_stack();
+    test_single_linked_list();
+    //test_single_linked_stack();
 
     return 0;
 }
