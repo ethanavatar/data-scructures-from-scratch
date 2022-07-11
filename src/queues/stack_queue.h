@@ -18,21 +18,21 @@ static t_stack_queue* create_stack_queue(const int capacity) {
 
 static void enqueue(t_stack_queue* queue, const int value) {
     while (!stack_is_empty(queue->s1)) {
-        stack_push(queue->s2, stack_pop(queue->s1));
+        push(queue->s2, pop(queue->s1));
     }
 
-    stack_push(queue->s1, value);
+    push(queue->s1, value);
 
     while (!stack_is_empty(queue->s2)) {
-        stack_push(queue->s1, stack_pop(queue->s2));
+        push(queue->s1, pop(queue->s2));
     }
 }
 
 static int dequeue(t_stack_queue* queue) {
-    return stack_pop(queue->s1);
+    return pop(queue->s1);
 }
 
-static int queue_is_empty(t_stack_queue* queue) {
+static int stack_queue_is_empty(t_stack_queue* queue) {
     return stack_is_empty(queue->s1);
 }
 
