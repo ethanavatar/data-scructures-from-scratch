@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -std=c99 -Wall -Wextra -Werror -o out/main src/main.c
+gcc -std=c99 -Wall -Wextra -o out/main src/main.c

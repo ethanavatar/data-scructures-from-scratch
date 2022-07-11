@@ -18,16 +18,16 @@ static t_stack* create_stack(const int capacity) {
     return stack;
 }
 
-static t_stack* push(t_stack* stack, const int value) {
+static t_stack* stack_push(t_stack* stack, const int value) {
     stack->data[stack->top++] = value;
     return stack;
 }
 
-static int pop(t_stack* stack) {
+static int stack_pop(t_stack* stack) {
     return stack->data[--stack->top];
 }
 
-static int peek(t_stack* stack) {
+static int stack_peek(t_stack* stack) {
     return stack->data[stack->top - 1];
 }
 

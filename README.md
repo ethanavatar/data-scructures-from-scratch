@@ -6,12 +6,13 @@ Header only implementations of data structures in C99.
 
 ### Lists
 
-- [Single linked list](src/lists/single_linked_list.h)
+- [Single link list](src/lists/single_linked_list.h)
 
 ### Stacks
 
 - [Contiguous static capacity](src/stacks/stack.h)
 - [Contiguous dynamic capacity](src/stacks/dynamic_stack.h)
+- [Single Link Stack](src/stacks/single_link_stack.h)
 
 ### Queues
 
