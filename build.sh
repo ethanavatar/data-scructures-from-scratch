@@ -1,2 +1,2 @@
 #!/bin/bash
-g++ -Wall -Wextra -Werror -o out/main src/main.cpp
+gcc -std=c99 -Wall -Wextra -Werror -o out/main src/main.c
